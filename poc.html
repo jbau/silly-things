@@ -1,0 +1,27 @@
+<html>
+<head></head>
+<body>
+<script>
+
+function errorHandler() {
+    alert('You are NOT registered for OpenKnowledge');
+}
+
+function successHandler() {
+    alert('You are registered for OpenKnowledge');
+}
+
+function checkCourse() {
+    var scriptTag = document.createElement("script");
+    scriptTag.type = "text/javascript";
+    scriptTag.onload = (function() { successHandler(); });
+    scriptTag.onerror = (function() { errorHandler(); });
+    document.body.appendChild(scriptTag);
+    //scriptTag.src = "https://api.coursera.org/api/sessions/v1/32/sections/1/items";
+	scriptTag.src = "https://class.stanford.edu/courses/Education/OpenKnowledge/Fall2014/courseware/f1b468f764d3435b8eefac6957ce8491/52fe799ca0c14a13934a0b85d1000f9b/";
+}
+
+checkCourse();
+</script>
+</body>
+</html>
